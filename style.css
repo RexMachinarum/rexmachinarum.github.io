@@ -1,0 +1,36 @@
+p, h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+	padding: 5px;
+	margin: 5px;
+}
+
+p {
+	font-family: 1.25em;
+	text-align: justify;
+}
+
+img {
+	border: 0px;
+}
+
+body {
+	background-image: url("wall.jpg");
+	width: 720px;
+	margin: auto;
+	padding: 40px 10px;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+}
+
+.text-zone {
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+	margin: 30px 0px;
+	background: white;
+	box-shadow: black 5px 5px;
+	border: 1px solid gray;
+}

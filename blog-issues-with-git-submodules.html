@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<div class="flex-container">
+			<h2>Issues With Git Submodules</h2>
+		</div>
+
+		<div class="flex-container">
+			<h4>October 16<sup>th</sup>, 2024</h4>
+		</div>
+
+		<div class="text-zone">
+			<h4 style="text-align: center;">Abstract</h4>
+			<p>
+				I originally wrote this as a message to one of my close friends, 
+				and I didn't put a ton of time into considering altervative approaches.
+				Rather I was trying to emphasize in a larger conversation that people rarely are capable of thinking outside of well established norms,
+				and ultimately this is one of the greatest hinderances to humanity's development.
+				This blog post is on the site to serve as a test of my website's initial commit,
+				and I assure that my future blog posts will be more rigorous.
+			</p>
+		</div>
+
+		<div class="text-zone">
+
+			<h4 style="text-align: center;">Introduction</h4>
+			<p>
+				I just noticed an issue with Git.
+				I was thinking about a hypothetical project that has a bunch of other libraries written in my language.
+				When you git clone the repo you aren't going to get any of these unless you use submodules.
+			</p>
+
+			<h4 style="text-align: center;">Solution with Submodules?</h4>
+			<p>
+				So you would do the obvious git submodule add <span style="font-family: courier">https://&lt;URL_TO_REPO&gt; &lt;LOCATION&gt; &amp;&amp; git submodule update</span>,
+				and this would download the proper repositories from the internet.
+				Now the problem with this is that you are downloading the entire repo,
+				and not actually just the library that you want (so all the build, interal docs, etc etc).
+				On github you solve this issue by making releases,
+				that are basically just zip files and then downloading them and adding them to your project.
+			</p>
+
+			<h4 style="text-align: center;">Solution with Releases?</h4>
+			<p>
+				But now you have another problem. The files that you downloaded are local to your projects repo,
+				and aren't pulled from the internet so if a security update comes out you are fucked because you have to go track down the new updates everytime that they happen and for every repo.
+				If you write a script to do this you now have to manage another program AND it most likely isn't cross platform either.
+			</p>
+
+			<h4 style="text-align: center;">Solution with Branches?</h4>
+			<p>
+				Now you could try to solve this with branches and a script on your system. When you want to make a release of your library, use a script on your local system that creates a new branch called like RELEASE-X.X and then push only what is needed to your thing, and have a cron job on your local system that detects if these new packages have come out. This obviously sucks because now every project has to become a distributed system just to edit code.
+			</p>
+
+			<h4 style="text-align: center;">Final Solution?</h4>
+			<p>
+				Literally just let git track files that aren't on the local machine.
+				You already rely on the internet for access to libraries, so why not just pull them from the internet?
+			</p>
+			
+			<p style="font-family: courier;">
+				# creates a zip file at lib/file.zip</br>
+				git add --url ftp://www.something.com/lib.zip lib/file.zip</br>
+				# unzips the file at lib/</br>
+				git add --url ftp://www.something.com/lib.zip lib</br>
+			</p>
+
+			<p>
+				Man it is actually crazy that most people don't have good enough intuition to save their life.
+			</p>
+		</div>
+
+		<div class="text-zone">
+			<a style="text-align: center; margin: 5px auto;" href="index.html">Return Home</a>
+		</div>
+
+	</body>
+</html>
+
