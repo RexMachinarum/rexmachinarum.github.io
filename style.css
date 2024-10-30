@@ -1,7 +1,22 @@
-p, h1, h2, h3, h4, h5, h6 {
+a, p, h1, h2, h3, h4, h5, h6, li {
 	font-family: sans-serif;
 	padding: 5px;
 	margin: 5px;
+}
+
+ul, li {
+	padding: 5px;
+	margin: 5px 5px 5px 25px;
+}
+
+img.vert {
+	width: 300px;
+	margin: auto;
+}
+
+img.horz {
+	width: 650px;
+	margin: auto;
 }
 
 p {
